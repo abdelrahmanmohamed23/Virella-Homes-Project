@@ -459,7 +459,7 @@ width: 90%;
   display: flex;
 }
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   nav a:hover {
   text-decoration: underline;
   text-decoration-color: var(--color-accent);
