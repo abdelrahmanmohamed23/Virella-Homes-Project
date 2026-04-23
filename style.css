@@ -1,0 +1,484 @@
+:root {
+  /* Typography */
+  --fs-hero-title: clamp(2.4rem, 5vw, 4.5rem);
+  --fs-section-title: clamp(1.8rem, 3vw, 2.6rem);
+  --fs-card-title: clamp(1.2rem, 2vw, 1.6rem);
+  --fs-body: clamp(0.95rem, 1.2vw, 1.1rem);
+  --fs-small: clamp(0.8rem, 1vw, 0.9rem);
+  --fs-nav: clamp(0.9rem, 1.2vw, 1.05rem);
+  --fs-button: clamp(0.9rem, 1.2vw, 1.05rem);
+
+  /*Colors*/
+  --color-bg: #ffffff;
+  --color-surface: #f8f7f4;
+  --color-primary: #0b0b0c;
+  --color-secondary: #6b6b6e;
+  --color-accent: #0b0b0c;
+  --color-accent-hover: #1a1a1d;
+  --color-border: #e5e5e5;
+  --color-hero-text: #e5e5e5;
+  /* Hero Gradient */
+  --hero-gradient: linear-gradient(
+    140deg,
+    rgba(11, 11, 12, 0.85) 0%,
+    rgba(11, 11, 12, 0.6) 40%,
+    rgba(11, 11, 12, 0.2) 75%,
+    rgba(11, 11, 12, 0.05) 100%
+  );
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.18);
+  /* Borders */
+  --border-light: 1px solid var(--color-border);
+  --border-accent: 1px solid var(--color-accent);
+  /* Transition */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  
+}
+.no-scroll {
+overflow: hidden;
+}
+/* Mixed */
+header h2,
+.hero div,
+.featured-villas h2,
+.featured-villas p,
+.featured-villas button {
+  margin-left: clamp(0.25rem, 2vw, 2rem);
+}
+button {
+  font-family: inherit;
+} 
+
+.button-icon-close, .button-icon-menu {
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.blur {
+  filter: blur(2px);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: var(--color-bg);
+}
+header h2 {
+  font-size: var(--fs-section-title);
+  cursor: default;
+  color: var(--color-primary);
+  user-select: none;
+}
+
+
+.button-icon-menu img {
+
+width: 2rem;
+}
+
+
+nav {
+  margin-right: clamp(0.2rem, 5vw, 3rem);
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: clamp(0.25rem, 3vw, 4rem);
+  list-style: none;
+}
+
+nav a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  font-size: var(--fs-nav);
+  transition: var(--transition-fast);
+}
+/* Hero */
+
+.hero {
+  background: var(--hero-gradient);
+  min-height: 85vh;
+  position: relative;
+margin-top: 5rem;
+
+}
+.hero div {
+  z-index: 1;
+  position: relative;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero h1 {
+  text-shadow: var(--shadow-lg);
+  color: white;
+  font-size: var(--fs-hero-title);
+}
+.hero button {
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  font-weight: 600;
+  font-size: var(--fs-button);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: var(--color-accent-hover) 2px solid;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  color: var(--color-hero-text);
+}
+
+
+.hero img {
+  max-height: 85vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.hero p {
+  color: var(--color-hero-text);
+  text-shadow: var(--shadow-lg);
+  font-size: var(--fs-body);
+}
+/* Features & Featured Villas Sections*/
+.features {
+  background-color: var(--color-surface);
+}
+.features,
+.featured-villas {
+  min-height: 50vh;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  padding: clamp(0.25rem, 2vw, 2rem) clamp(0.25rem, 2vw, 2rem);
+  justify-content: center;
+  gap: 2vw;
+  scroll-margin-top: 5rem;
+}
+
+.features .card,
+.featured-villas .card {
+  height: 30rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: var(--border-light);
+  box-shadow: var(--shadow-md);
+  
+  transition: var(--transition-normal);
+}
+.features .card h2,
+.featured-villas .card h2 {
+  font-size: var(--fs-card-title);
+  color: var(--color-primary);
+}
+
+.features .card img,
+.featured-villas .card img {
+  width: 100%;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  height: 50%;
+  object-fit: cover;
+}
+.features .card h2,
+.features .card p {
+  margin: 2rem 0 0 0;
+}
+.features .card p {
+  padding: 0 1rem;
+  color: var(--color-secondary);
+}
+.features .card p,
+.featured-villas .card p {
+  font-size: var(--fs-body);
+}
+
+.featured-villas .card p {
+  color: var(--color-accent);
+}
+.featured-villas .card {
+  background-color: white;
+
+  align-items: flex-start;
+  gap: 7%;
+}
+.featured-villas div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.featured-villas p {
+  font-weight: bold;
+}
+.featured-villas button {
+  border: var(--border-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+  background-color: transparent;
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  cursor: pointer;
+  font-size: var(--fs-button);
+  transition: var(--transition-fast);
+}
+
+/* About Section */
+.about {
+  background-color: var(--color-surface);
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  scroll-margin-top: 5rem;
+}
+.about-container {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 30vh;
+  gap: 1.5rem;
+}
+.about-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.76rem;
+}
+.about img {
+  width: 35%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+.about h2 {
+  font-size: var(--fs-section-title);
+}
+.about p {
+  color: var(--color-secondary);
+  font-size: var(--fs-body);
+}
+.about-container th,
+.about-container td {
+  padding: 0.5rem;
+  text-align: center;
+}
+.about-container th {
+  color: var(--color-secondary);
+}
+.about-container td {
+  color: var(--color-primary);
+}
+footer {
+  min-height: 8vh;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  color: var(--color-secondary);
+  font-size: var(--fs-small);
+}
+/* Modal */
+.modal {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 70%;
+  height: 70vh;
+  z-index: 3;
+  top: calc((100vh - 70vh + 5rem)  / 2);
+  left: calc((100% - 70%) / 2);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: var(--border-light);
+}
+.modal > img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+.modal-container {
+width: 53%;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+height: 70%;
+}
+.modal-container h2 {
+   font-size: var(--fs-section-title);
+  color: var(--color-primary);
+}
+.modal-container .price {
+  font-size: var(--fs-card-title);
+}
+.modal-container .villa-specs {
+  display: flex;
+ justify-content: space-between;
+width: 90%;
+}
+.modal-container .villa-specs p{
+  font-size: var(--fs-small);
+  color: var(--color-secondary);
+}
+
+.modal-container .description {
+  font-size: var(--fs-body);
+  font-weight: bold;
+}
+.button-icon-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+
+}
+.button-icon-close img {
+  width: 2rem;
+}
+
+/* Media Queries */
+@media (min-width: 1634px) {
+  .features .card,
+  .featured-villas .card {
+    flex: 0 0 calc((100% - (2vw * 2)) / 3);
+  }
+}
+@media (max-width: 828px) {
+  .about {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  .about img {
+    width: 80%;
+  }
+  .about-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-container div {
+    width: 80%;
+  }
+  .about-container th,
+  .about-container td {
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .button-icon-menu {
+  
+    margin-right: clamp(0.2rem, 5vw, 3rem);
+  }
+  nav {
+    
+    background-color: var(--color-primary);
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    margin: 0;
+    height: calc(100vh - 5rem);
+    width: 50vw;
+  }
+  nav ul {
+    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+   
+  }
+  nav a {
+     color: #ffffff;
+  }
+  .modal{
+    flex-direction: column;
+    top: calc((100vh - 80vh + 5rem)  / 2);
+    height: 80vh;
+  }
+.modal > img {
+  width: 100%;
+  height: 50%;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 ;
+}
+.modal-container {
+  width: 80%;
+  height: 50%;
+}
+.modal .villa-specs {
+  width: auto;
+  flex-direction: column;
+  gap: 7%;
+}
+.button-icon-close {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  display: flex;
+}
+}
+@media (hover: hover) {
+  nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration-thickness: clamp(1px, 0.25vw, 4px);
+  text-underline-offset: 6px;
+}
+
+.hero button:hover {
+  color: var(--color-accent-hover);
+  background-color: transparent;
+  border: var(--color-accent-hover) 2px solid;
+}
+.features .card:hover,
+.featured-villas .card:hover {
+  box-shadow: var(--shadow-hover);
+}
+  .featured-villas button:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-hero-text);
+}
+}
