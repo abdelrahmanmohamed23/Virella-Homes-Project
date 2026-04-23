@@ -1,11 +1,6 @@
-# Virella Homes 🏡
+# Virella Homes
 
 A modern real estate website for showcasing luxury villas, built with a focus on performance, accessibility, and clean UI.
-
----
-
-## 🔗 Live Demo
-https://abdelrahmanmohamed23.github.io/Virella-Homes-Project/
 
 ---
 
@@ -38,7 +33,7 @@ https://abdelrahmanmohamed23.github.io/Virella-Homes-Project/
 
 ---
 
-## 📌 Notes
+## 📌 Note
 
 This project reflects my current learning stage in web development. 
 I plan to continuously improve it over time as I grow my skills.
