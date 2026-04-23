@@ -101,7 +101,7 @@ featuredVillas.addEventListener("click", (e) => {
 });
 
 footer.querySelector("p").textContent =
-  `©${new Date().getFullYear()} - Virella Homes | All rights reserved`;
+  `©${new Date().getFullYear()} - Virella Homes | Source code licensed under MIT.`;
 
 // Functions
 function openNav() {
