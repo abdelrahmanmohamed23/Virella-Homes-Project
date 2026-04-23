@@ -126,7 +126,7 @@ function closeModal() {
  
   bluring();
   disableEvents();
-  document.removeEventListener("touchmove", prevent);
+ 
   document.removeEventListener("click", clickOutModal);
   modalAppearance = false;
   modal.style.display = "none";
@@ -176,10 +176,14 @@ function noScroll(opened) {
   document.body.style.paddingRight = scrollBarWidth + "px";
   header.style.paddingRight = scrollBarWidth + "px";
 
-  document.addEventListener("touchmove", prevent, { passive: false });
+
   document.documentElement.classList.toggle("no-scroll");
   document.body.classList.toggle("no-scroll");
-
+if (opened) {
+  document.addEventListener("touchmove", prevent, { passive: false });
+} else {
+ document.removeEventListener("touchmove", prevent);
+}
   if (!opened && lastFocusedElement) {
 lastFocusedElement.focus()
 
